@@ -1,0 +1,44 @@
+cd ../kernel && exec make -
+exec cc -c -I/usr/include mpx.s
+exec cc -c -I/usr/include start.c
+exec cc -c -I/usr/include protect.c
+exec cc -c -I/usr/include klib.s
+exec cc -c -I/usr/include table.c
+exec cc -c -I/usr/include main.c
+exec cc -c -I/usr/include proc.c
+exec cc -c -I/usr/include exception.c
+exec cc -c -I/usr/include system.c
+exec cc -c -I/usr/include clock.c
+exec cc -c -I/usr/include memory.c
+exec cc -c -I/usr/include tty.c
+exec cc -c -I/usr/include keyboard.c
+exec cc -c -I/usr/include console.c
+exec cc -c -I/usr/include i8259.c
+exec cc -c -I/usr/include rs232.c
+exec cc -c -I/usr/include dmp.c
+exec cc -c -I/usr/include misc.c
+exec cc -c -I/usr/include driver.c
+exec cc -c -I/usr/include drvlib.c
+exec cc -c -I/usr/include floppy.c
+exec cc -c -I/usr/include at_wini.c
+exec cc -c -I/usr/include bios_wini.c
+exec cc -c -I/usr/include esdi_wini.c
+exec cc -c -I/usr/include xt_wini.c
+exec cc -c -I/usr/include printer.c
+exec cc -c -I/usr/include aha1540.c
+exec cc -c -I/usr/include dp8390.c
+exec cc -c -I/usr/include pty.c
+exec cc -c -I/usr/include wdeth.c
+exec cc -c -I/usr/include ne2000.c
+exec cc -c -I/usr/include 3c503.c
+exec cc -c -I/usr/include sb16_dsp.c
+exec cc -c -I/usr/include sb16_mixer.c
+exec cc -c -I/usr/include fatfile.c
+exec cc -c -I/usr/include dosfile.c
+exec cc -.o -i -o kernel mpx.o start.o protect.o klib.o table.o main.o proc.o \
+	exception.o system.o clock.o memory.o tty.o keyboard.o \
+	console.o i8259.o rs232.o dmp.o misc.o driver.o \
+	drvlib.o floppy.o at_wini.o bios_wini.o esdi_wini.o \
+	xt_wini.o printer.o aha1540.o dp8390.o pty.o \
+	wdeth.o ne2000.o 3c503.o sb16_dsp.o sb16_mixer.o \
+	fatfile.o dosfile.o -lsys
